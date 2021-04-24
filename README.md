@@ -1,6 +1,4 @@
-# nuclei_segmenter_counter
-
-Deployment of U-net for nuclei segmentation and counting.
+# Image Segmentation and Medical Imaging to find Nuclei using U-Net and Convolutional Neural Network
 
 ## Summary
 
@@ -8,19 +6,10 @@ The purpose of this project is to demonstrate a simple deep learning application
 
 The first step towards tackling these issues is perhaps to create a general AI tool to help pathologists segment and count cells within a sample slide.
 
-In this notebook, I demonstrate such a cell segmentation tool by training a deep convolutional neural network on cell images acquired from the 2018 Science Bowl Kaggle competition (data available after registration). Specifically, training was performed on 670 labeled images using a U-Net architecture [1], with a 90/10 train/validation split, testing was done on an additional 65 images. This dataset is particularly useful as it includes different kinds of images with varying sizes, colours, modalities. Thus, the network learns to segment cells across different conditions without handcrafting features. The network was implemented using Keras and Tensorflow. Additionally, I created a simple function to count the number of cells after segmentation.
+In this notebook, We demonstrate such a cell segmentation tool by training a deep convolutional neural network on cell images acquired from the 2018 Science Bowl Kaggle competition (data available after registration). Specifically, training was performed on 670 labeled images using a U-Net architecture [1], with a 90/10 train/validation split, testing was done on an additional 65 images. This dataset is particularly useful as it includes different kinds of images with varying sizes, colours, modalities. Thus, the network learns to segment cells across different conditions without handcrafting features. The network was implemented using Keras and Tensorflow. Additionally, I created a simple function to count the number of cells after segmentation.
 
-### The 'Data_Science_Bowl_2018_preProc_counting.ipynb' notebook provides a step-by-step demonstration with the following sections:
+### Refer to the main src file unet.ipynb for further exploration of how the project was implemented.
 
-1. Import required libraries
-2. Load datasets
-3. Image preprocessing
-4. Data Visualization
-5. Setup U-net model
-6. Training
-7. Prediction
-8. Visualize Results
-9. Cell Counting
 
 ### Results
 
@@ -30,7 +19,7 @@ Overall the model does a good job at segmenting images and counting cells. Futur
 <img src="/images/counting.png" width="40%">
 
 ### Final thoughts
-The final result from this pipeline is a segmented image with cells counted. It works well as a first prototype and proof of concept but there is much room for improvement; for example, some of the cells overlap and get clustered together as one single cell, which also leads to under counting. Future post-processing using water shed techniques should help with this. Additionally, I'd like to try other network architectures including R-CNN.
+The eventual outcome from this pipeline is a fragmented picture with cells counted. It functions admirably as a first model and verification of idea but there is much opportunity to get better; for instance, a portion of the cells cover and get clustered together as one single cell, which additionally prompts under counting. Future post-handling using water shed techniques should assist with this. Further, other network architectures can be tested for improvisation of accuracy and optimization of resources. Some examples for the same can be R-CNN, U-Net++, etc.
 
 [1] Janowczyk, A., & Madabhushi, A. (2016). Deep learning for digital pathology image analysis: A comprehensive tutorial with selected use cases. Journal of pathology informatics, 7.
 
